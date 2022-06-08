@@ -2,7 +2,7 @@ package echoredoc
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/mvrilo/go-redoc"
+	"github.com/luisnquin/go-redoc"
 )
 
 // Handler sets some defaults and returns a HandlerFunc.
