@@ -1,20 +1,21 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{{ .title }}</title>
-  <meta name="description" content="{{ .description }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  body {
-	margin: 0;
-	padding: 0;
-  }
-  </style>
-</head>
-<body>
-  <div id="main"></div>
-  <script>{{ .body }}</script>
-  <script>Redoc.init("{{ .url }}", {}, document.getElementById("main"))</script>
-</body>
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ .title }}</title>
+		<meta name="description" content="{{ .description }}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="{{ .faviconType }}" href="{{ .faviconPath }}" />
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main"></div>
+		<script>{{ .body }}</script>
+		<script>Redoc.init('{{ .url }}', {}, document.getElementById('main'))</script>
+	</body>
 </html>

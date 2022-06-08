@@ -5,13 +5,11 @@ import (
 	"github.com/mvrilo/go-redoc"
 )
 
-func New(doc redoc.Redoc) echo.MiddlewareFunc {
-	handle := doc.Handler()
+// Handler sets some defaults and returns a HandlerFunc.
+func EchoHandler(r redoc.Redoc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		r.Handler()(c.Response(), c.Request())
 
-	return func(next echo.HandlerFunc) echo.HandlerFunc {
-		return func(ctx echo.Context) error {
-			handle(ctx.Response(), ctx.Request())
-			return nil
-		}
+		return nil
 	}
 }

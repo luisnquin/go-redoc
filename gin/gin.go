@@ -5,9 +5,8 @@ import (
 	"github.com/mvrilo/go-redoc"
 )
 
-func New(doc redoc.Redoc) gin.HandlerFunc {
-	handle := doc.Handler()
+func GinHandler(r redoc.Redoc) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		handle(ctx.Writer, ctx.Request)
+		r.Handler()(ctx.Writer, ctx.Request)
 	}
 }

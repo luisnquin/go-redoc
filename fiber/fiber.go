@@ -6,6 +6,10 @@ import (
 	"github.com/mvrilo/go-redoc"
 )
 
-func New(doc redoc.Redoc) fiber.Handler {
-	return adaptor.HTTPHandlerFunc(doc.Handler())
+func FiberHandler(r redoc.Redoc) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		adaptor.HTTPHandlerFunc(r.Handler())
+
+		return nil
+	}
 }
