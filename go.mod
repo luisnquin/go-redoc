@@ -1,4 +1,4 @@
-module github.com/mvrilo/go-redoc
+module github.com/luisnquin/go-redoc
 
 go 1.16
 
